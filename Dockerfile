@@ -9,7 +9,7 @@ ENV JAVA_SHA256_SUM    30608baff3bb3b09ea65fab603aae1c58f1381d7bb9d1b9af3dec9d49
 
 RUN apt-get -y update && \
     apt-get -y install curl && \
-    RUN apt-get -y update && \
+    apt-get -y update && \
     apt-get -y install ffmpeg && \
     apt-get -y install rtmpdump && \
     apt-get -y install aria2 && \
