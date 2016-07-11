@@ -9,11 +9,6 @@ ENV JAVA_SHA256_SUM    30608baff3bb3b09ea65fab603aae1c58f1381d7bb9d1b9af3dec9d49
 
 RUN apt-get -y update && \
     apt-get -y install curl && \
-    apt-get -y update && \
-    apt-get -y install ffmpeg && \
-    apt-get -y install rtmpdump && \
-    apt-get -y install aria2 && \
-    apt-get -y install youtube-dl && \
     mkdir -p /opt &&\
     curl -jkLH "Cookie: oraclelicense=accept-securebackup-cookie" -o java.tar.gz \
     http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD}/${JAVA_PACKAGE}-${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-linux-x64.tar.gz && \
@@ -44,6 +39,10 @@ RUN apt-get -y update && \
     apt-get -y --allow-remove-essential purge xserver-xorg-video-* && \
     apt-get -y --allow-remove-essential purge $(aptitude search '~i!~M!~prequired!~pimportant!~R~prequired!~R~R~prequired!~R~pimportant!~R~R~pimportant!busybox!grub!initramfs-tools' | awk '{print $2}') && \
     apt-get -y --allow-remove-essential purge aptitude && \
+    apt-get -y install ffmpeg && \
+    apt-get -y install rtmpdump && \
+    apt-get -y install aria2 && \
+    apt-get -y install youtube-dl && \
     apt-get -y --allow-remove-essential autoremove && \
     apt-get -y clean && \
     rm -rf /var/cache/*
