@@ -49,7 +49,6 @@ RUN apt-get -y update && \
     rm -rf /var/cache/*
 
 
-
 # Set environment
 ENV JAVA_HOME /opt/jdk
 ENV PATH ${PATH}:${JAVA_HOME}/bin
