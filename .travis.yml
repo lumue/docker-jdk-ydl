@@ -6,10 +6,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t lumue/jdkydl .
+  - docker build -t lumue/jdkydl:alpine .
 
 after_success:
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push lumue/jdkydl
+  - docker push lumue/jdkydl:alpine
 
 
