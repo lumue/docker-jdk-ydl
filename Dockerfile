@@ -55,9 +55,11 @@ RUN apk upgrade --update && \
                /opt/jdk/jre/lib/ext/nashorn.jar \
                /opt/jdk/jre/lib/oblique-fonts \
                /opt/jdk/jre/lib/plugin.jar \
-               /tmp/* /var/cache/apk/*
-
-
+               /tmp/* /var/cache/apk/* && \
+    apk add ffmpeg --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted && \
+    apk add rtmpdump --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted && \
+    apk add aria2 --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted && \
+    apk add youtube-dl --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
 # Set environment
 ENV JAVA_HOME /opt/jdk
 ENV PATH ${PATH}:${JAVA_HOME}/bin
