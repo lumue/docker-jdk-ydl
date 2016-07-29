@@ -55,7 +55,7 @@ RUN apk upgrade --update && \
                /opt/jdk/jre/lib/ext/nashorn.jar \
                /opt/jdk/jre/lib/oblique-fonts \
                /opt/jdk/jre/lib/plugin.jar \
-               /tmp/* /var/cache/apk/* && \
+               /tmp/* /var/cache/apk/*
 
 
 # Set environment
