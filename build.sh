@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-docker build -t lumue/jdkydl:alpinegit  .
+docker build -t lumue/jdkydl:alpine .
 
